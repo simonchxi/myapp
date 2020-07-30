@@ -2,27 +2,28 @@ import React, { useState, useEffect, useReducer} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './App.css';
-import * as serviceWorker from './serviceWorker';
-import { checkPropTypes, func } from 'prop-types';
+//import * as serviceWorker from './serviceWorker';
+//import { checkPropTypes, func } from 'prop-types';
 //import { ReactComponent } from '*.svg';
 
 
-function Chengdu() {
-  return (
-    <div>
-      <h1>Chengdu of Sichuan of China</h1>
-    </div>
-  );
-}
+//function Chengdu() {
+//  return (
+//    <div>
+//      <h1>Chengdu of Sichuan of China</h1>
+//    </div>
+//  );
+//}
 
 
-function Newyork() {
-  return (
-    <div>
-      <h1>New York of California of USA</h1>
-    </div>
-  );
-}
+//function Newyork() {
+//  return (
+//    <div>
+//      <h1>New York of California of USA</h1>
+//    </div>
+//  );
+//}
+
 function Banner()  {
   return (
   <div className="App-header">
@@ -42,7 +43,7 @@ function GitHubUser({login}) {
       .then(res =>res.json())
       .then(setData)
       .catch(console.error);
-  }, []);
+  }, [login]);
 
   if (data) {
     return (
@@ -50,7 +51,7 @@ function GitHubUser({login}) {
         <h1>
           {data.login}
         </h1>
-        <img src={data.avatar_url} width={100} />
+        <img src={data.avatar_url} width={100} alt="avatar" />
       </div>
     );
   }
@@ -140,7 +141,7 @@ function App()  {
   <React.Fragment>
      <Banner />
      <Content place="Chengdu"/>
-     <h1/>
+     <br />
      <Buttom />
   </React.Fragment>
   );
